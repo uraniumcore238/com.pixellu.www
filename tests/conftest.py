@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 driver = None
 
 def pytest_addoption(parser):
-    parser.addoption("--browser_name", action="store", default="chrome")
+    parser.addoption("--browser_name", action="store", default="remote")
 
 
 @pytest.fixture(scope="class")
