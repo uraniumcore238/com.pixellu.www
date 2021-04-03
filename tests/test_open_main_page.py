@@ -1,4 +1,4 @@
-from pages.MainPageObject import MainPageObject
+from page_objects.MainPageObject import MainPageObject
 from utilities.BaseClass import BaseClass
 
 

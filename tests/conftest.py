@@ -14,8 +14,6 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="class")
 def setup(request):
 
-    # driver = webdriver.Remote(command_executor="http://136.243.89.21:4445//wd/hub", desired_capabilities=capabilities)
-
     global driver
     browser_name = request.config.getoption("browser_name")
     if browser_name == "chrome":
@@ -34,16 +32,14 @@ def setup(request):
         options.add_argument('--window-size=1920x1080')
         driver = os.getcwd() + '\\chromedriver.exe'
         driver = webdriver.Chrome(options = options, executable_path='../source/chromedriver.exe')
-    # elif browser_name == "remote":
-    #     print('Starting with remote driver 1')
-    #     capabilities = {
-    #         "browserName": "chrome",
-    #         "browserVersion": "89.0",
-    #         "selenoid:options": {"enableVNC": True, "enableVideo": False}
-    #     }
-    #     print('Starting with remote driver')
-    #     driver = webdriver.Remote(command_executor="http://136.243.89.21:4445//wd/hub",
-    #                               desired_capabilities=capabilities)
+    elif browser_name == "remote":
+        capabilities = {
+            "browserName": "chrome",
+            "browserVersion": "89.0",
+            "selenoid:options": {"enableVNC": True, "enableVideo": False}
+        }
+        driver = webdriver.Remote(command_executor="http://136.243.89.21:4445//wd/hub",
+                                  desired_capabilities=capabilities)
 
     driver.get('https://www.pixellu.com')
     driver.implicitly_time = 30
