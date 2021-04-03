@@ -14,4 +14,5 @@ class TestOpenMainPage(BaseClass):
         with allure.step('Open main page'):
             mainPageObject = MainPageObject(self.driver)
             mainPageObject.assert_the_header()
+            print('Page was successfully opened')
 
