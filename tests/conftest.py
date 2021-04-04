@@ -5,10 +5,11 @@ import self
 from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
 driver = None
 
 def pytest_addoption(parser):
-    parser.addoption("--browser_name", action="store", default="remote")
+    parser.addoption("--browser_name", action="store", default="chrome")
 
 
 @pytest.fixture(scope="class")

@@ -1,6 +1,6 @@
 import allure
 
-from page_objects.MainPageObject import MainPageObject
+from pageObjects.MainPageObject import MainPageObject
 from utilities.BaseClass import BaseClass
 
 
